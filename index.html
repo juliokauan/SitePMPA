@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site PMPA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+    <h1>Cálculo de Tempo de Serviço</h1>
+    <form action = "resposta.html" method = "post" id = "formulario">
+      <div id = "div_inclusao" class = "div_container"> 
+        <label for = "inclusao" class = "style_label">Data de Inclusão do Militar</label>
+        <input type = "date" name = "inclusao" id = "inclusao" class = "container_datas">
+      </div>
+      <div id = "div_genero" class = "div_container">
+        <label for = "genero" class = "style_label">Gênero do Militar</label>
+        <input type = "radio" name = "genero" id = "genero_masc"> <label for = "genero_masc">Masculino</label>
+        <input type = "radio" name = "genero" id = "genero_fem" class = "container_radio"> <label for = "genero_fem">Feminino</label>
+      </div>
+      <div id = "div_requerimento" class = "div_container">
+        <label for = "requerimento" class = "style_label">Data do Requerimento</label>
+        <input type = "date" name = "requerimento" id = "requerimento" class = "container_datas">
+      </div>
+      <div id = "div_promocao" class = "div_container">
+        <label for = "promocao" class = "style_label">Última promoção do Militar</label>
+        <input type = "date" name = "promocao" id = "promocao" class = "container_datas">
+      </div>
+      <div id = "div_patente" class = "div_container">
+        <label for = "patente" class = "style_label">Patente Atual do Militar</label>
+        <input type = "radio" name = "patente" id = "patente_cb"> <label for = "patente_cb">Soldado ou Cabo</label>
+        <input type = "radio" name = "patente" id = "patente_3sgt" class = "container_radio"> <label for = "patente_3sgt">3° Sargento ou Superior</label>
+      </div>
+      <div id = "div_averb_escolha" class = "div_container">
+        <label for = "escolha_averb" class = "style_label">O Militar possui averbação?</label>
+        <select name="escolha_averb" id="escolha_averb" class = "container_averb_escolha">
+          <option value = "sem_averb">Não possui</option>
+          <option value = "apenas_forcas_armadas">Apenas Forças Armadas</option>
+          <option value = "apenas_privada">Apenas Empresas Privadas</option>
+          <option value = "forcas_e_empresas">Forças Armadas e Empresas Privadas</option>
+        </select>
+      </div>
+      <div id = "div_averb_forca" class = "div_container">
+        <label for = "ano_forcas" class = "style_label">Insira o tempo de averbação em Forças Armadas</label>
+        <label for = "ano_forcas">Anos: </label>
+        <input type="number" name="ano_forcas" id="ano_forcas" class = "container_input_averb" value="0"/>
+        <label for = "mes_forcas">Mêses: </label>
+        <input type="number" name="mes_forcas" id="mes_forcas" class = "container_input_averb" value="0"/>
+        <label for = "dias_forcas">Dias: </label>
+        <input type="number" name="dias_forcas" id="dias_forcas" class = "container_input_averb" value="0"/>
+      </div>
+      <div id = "div_averb_privada" class = "div_container">
+        <label for = "ano_privada" class = "style_label">Insira o tempo de averbação em Empresas Privadas</label>
+        <label for = "ano_privada">Anos: </label>
+        <input type="number" name="ano_privada" id="ano_privada" class = "container_input_averb" value="0"/>
+        <label for = "mes_privada">Mêses: </label>
+        <input type="number" name="mes_privada" id="mes_privada" class = "container_input_averb" value="0"/>
+        <label for = "dias_privada">Dias: </label>
+        <input type="number" name="dias_privada" id="dias_privada" class = "container_input_averb" value="0"/>
+      </div>
+      <input type="submit" name="button_Formulario" id="button_Formulario" value="Calcular"/>
+    </form>
+    </main>
+    <script src = "script.js"></script>
+  </body>
+</html>
