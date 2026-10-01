@@ -44,5 +44,4 @@ submitButton.addEventListener("click", function(event) {
             dia: document.querySelector("#dias_privada")?.value || ""
         }
     };
-    console.log(respostas);
 });
