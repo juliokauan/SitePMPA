@@ -1,0 +1,15 @@
+@import '../../global/styles.css';
+
+#div_resultados{
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#div_resultados p{
+  margin-bottom: 15px;
+}

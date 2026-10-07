@@ -1,0 +1,46 @@
+@import '../../global/styles.css';
+@import './partials/buttonForm.css';
+@import 'partials/selectForm.css';
+
+form{
+  width: 100%;
+}
+
+div label:first-child{
+  font-size: 1.1em;
+}
+
+.style_label{
+  display: block;
+  margin-bottom: 20px;
+}
+.div_container{
+  margin: 0 63px;
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+
+.container_datas{
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 1.1em;
+}
+
+.container_radio{
+  margin-left: 25px;
+}
+
+.container_input_averb {
+  width: 30px;
+  margin-right: 40px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: .9em;
+}
+
+.container_input_averb::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+}

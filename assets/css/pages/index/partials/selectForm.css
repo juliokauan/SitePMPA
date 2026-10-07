@@ -1,0 +1,26 @@
+#div_averb_escolha select{
+  appearance: base-select;
+  padding: 10px 15px 10px 20px;
+  border-radius: 6px;
+}
+
+#div_averb_escolha ::picker(select){
+  appearance: base-select;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+#div_averb_escolha select::picker-icon{
+  font-size: .8em;
+  align-self: center;
+  transition: 0.2s ease;
+}
+
+#div_averb_escolha select:open::picker-icon{
+  transform: rotate(180deg);
+}
+
+#div_averb_escolha option{
+  border-radius: 10px;
+  padding: 3px;
+}

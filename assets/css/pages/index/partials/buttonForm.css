@@ -1,0 +1,21 @@
+#button_Formulario{
+  display: block;
+  margin: 25px auto 30px auto;
+  font-size: 1.4em;
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.801);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#button_Formulario:hover{
+  background-color: black;
+  color: white;
+}
+#button_Formulario:active{
+  background-color: white;
+  color: black;
+  transform: scale(0.95);
+}
