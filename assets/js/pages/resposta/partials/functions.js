@@ -1,4 +1,4 @@
-import Datas from './datasClass';
+import Datas from './datasClass.js';
 
 export function temRespostasFaltando(obj){
     return Object.values(obj).some(valor =>{

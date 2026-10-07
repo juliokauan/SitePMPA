@@ -6,6 +6,9 @@ export default class Datas{
     }
 
     somaData(data){
+        if (!data){
+            return new Datas();
+        }
         let dia = this.dia;
         let mes = this.mes;
         let ano = this.ano;
@@ -25,6 +28,9 @@ export default class Datas{
     }
 
     subtrairData(data){
+        if (!data){
+            return new Datas();
+        }
         let dia = this.dia;
         let mes = this.mes;
         let ano = this.ano;

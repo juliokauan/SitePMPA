@@ -1,41 +1,37 @@
-function erroPopup(mensagem){
-    const erroExiste = document.querySelector("erro");
-    if (erroExiste){
-        erroExiste.remove();
-    }
+export function erroPopup(mensagem){
+    document.querySelector("#erro")?.remove();
     const erro = document.createElement("div");
     erro.id = "erro";
-    erro.class = "fundoEscuro";
+    erro.className = "fundoEscuro";
     
     erro.innerHTML = `
-        <div id = "containerErro">
-            <p id="mensagemErro">${mensagem}</p>
-            <button class="botaoX">X</button>
-        </div>`;
-
-    const erroContainer = document.querySelector("#containerErro");
+    <div id = "containerErro">
+        <p>${mensagem}</p>
+        <button class="botaoX">X</button>
+    </div>`;
 
     document.body.appendChild(erro);
+
     setTimeout(() => {
         erro.classList.add("mostrar");
-        erroContainer.classList.add("mostrar");
+        document.querySelector("#containerErro").classList.add("mostrar");
     }, 10);
 
-    setTimeout(() =>{
-        fecharErro();
-    }, 5000);
+    document.querySelector(".botaoX").addEventListener("click", fecharErro);
+
+    setTimeout(fecharErro, 5000);
 }
 
-function fecharErro(){
-    const erro = document.querySelector("erro");
+export function fecharErro(){
+    const erro = document.querySelector("#erro");
     if (erro){
-        const erroContainer = document.querySelector("#containerErro"); 
         erro.classList.remove("mostrar");
-        erroContainer.classList.remove("mostrar");
-        
+        document.querySelector("#containerErro").classList.remove("mostrar");
+
         setTimeout(() =>{
            if (erro.parentElement){
             erro.remove();
+            window.location.href = "index.html";
            } 
         }, 300);
     }

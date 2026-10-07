@@ -1,19 +1,20 @@
-import * as functions from './partials/functions.js'
-import Datas from './partials/datasClass.js'
+import { erroPopup } from '../../global/script.js';
+import * as functions from './partials/functions.js';
+import Datas from './partials/datasClass.js';
 
 const obtain_respostas = localStorage.getItem("Respostas");
 let respostas;
-let tempoLei;
 
-if (obtain_respostas) {
+if (!obtain_respostas){
+    erroPopup("Erro: Resposta não encontada.");
+}
+else{
     respostas = JSON.parse(obtain_respostas);
     if (functions.temRespostasFaltando(respostas)){
-        erroPopup("Erro: Faltam campos para preencher.");
+        erroPopup("Erro: Faltam campos a preencer.");
     }
-    functions.transformarDados(respostas);
-    console.log(respostas);
-    localStorage.removeItem("Respostas");
-}
-else {
-    erroPopup("Erro: Respostas não encontrada.");
+    else{
+        respostas = functions.transformarDados(respostas);
+        console.log(respostas);
+    }
 }
