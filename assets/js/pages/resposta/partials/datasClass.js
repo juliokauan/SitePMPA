@@ -1,8 +1,16 @@
 export default class Datas{
-    constructor({ano = 0, mes = 0, dia = 0} = {}){
-        this.ano = Number(ano);
-        this.mes = Number(mes);
-        this.dia = Number(dia);
+    constructor(anoOrobj = 0, mes = 0, dia = 0){
+        if (typeof anoOrobj === 'object' && anoOrobj != null){
+            const {ano = 0, mes = 0, dia = 0} = anoOrobj;
+            this.ano = Number(ano);
+            this.mes = Number(mes);
+            this.dia = Number(dia);
+        }
+        else{
+            this.ano = Number(anoOrobj);
+            this.mes = Number(mes);
+            this.dia = Number(dia);
+        }
     }
 
     somaData(data){
@@ -24,7 +32,7 @@ export default class Datas{
             mes -= 12;
         }
         ano += data.ano;
-        return new Datas({ano, mes, dia});
+        return new Datas(ano, mes, dia);
     }
 
     subtrairData(data){
@@ -36,16 +44,16 @@ export default class Datas{
         let ano = this.ano;
 
         dia -= data.dia;
-        while (dia <= 0){
+        while (dia < 0){
             mes--;
             dia += 30;
         }
         mes -= data.mes;
-        while (mes <= 0){
+        while (mes < 0){
             ano--;
             mes += 12;
         }
         ano -= data.ano;
-        return new Datas({ano, mes, dia});
+        return new Datas(ano, mes, dia);
     }
 }

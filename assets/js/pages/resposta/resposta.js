@@ -14,7 +14,7 @@ else{
         erroPopup("Erro: Faltam campos a preencer.");
     }
     else{
-        respostas = functions.transformarDados(respostas);
+        functions.transformarDados(respostas);
         console.log(respostas);
     }
 }
