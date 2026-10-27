@@ -2,19 +2,23 @@ import { erroPopup } from '../../global/script.js';
 import * as functions from './partials/functions.js';
 import Datas from './partials/datasClass.js';
 
-const obtain_respostas = localStorage.getItem("Respostas");
-let respostas;
+function lerRespostas(){
+    try {
+        return JSON.parse(localStorage.getItem("Respostas"));
+    } catch{
+        return null;
+    }
+}
 
-if (!obtain_respostas){
+const respostas = lerRespostas();
+
+if (!respostas){
     erroPopup("Erro: Resposta não encontada.");
 }
+else if(functions.temRespostasFaltando(respostas)){
+    erroPopup("Erro: Faltam campos a preencer.");
+}
 else{
-    respostas = JSON.parse(obtain_respostas);
-    if (functions.temRespostasFaltando(respostas)){
-        erroPopup("Erro: Faltam campos a preencer.");
-    }
-    else{
-        functions.transformarDados(respostas);
-        console.log(respostas);
-    }
+    functions.transformarDados(respostas);
+    console.log(respostas);
 }

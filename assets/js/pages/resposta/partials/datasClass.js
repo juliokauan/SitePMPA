@@ -22,12 +22,12 @@ export default class Datas{
         let ano = this.ano;
         
         dia += data.dia;
-        while (dia > 30){
+        while (dia >= 30){
             mes++;
             dia -= 30;
         }
         mes += data.mes;
-        while (mes > 12){
+        while (mes >= 12){
             ano++;
             mes -= 12;
         }

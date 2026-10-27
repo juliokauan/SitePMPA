@@ -31,7 +31,7 @@ export function fecharErro(){
         setTimeout(() =>{
            if (erro.parentElement){
             erro.remove();
-            window.location.href = "index.html";
+            window.location.replace("index.html");
            } 
         }, 300);
     }

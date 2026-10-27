@@ -1,7 +1,8 @@
 const options = document.querySelector("#escolha_averb");
 const divForca = document.querySelector("#div_averb_forca");
 const divPrivada = document.querySelector("#div_averb_privada");
-
+const tempoforaEscolha = document.querySelector("#tempoforaSim");
+const divtempoFora = document.querySelector("#div_tempofora");
 
 options.addEventListener("change", function(event) {
     const selectedOption = event.target.value;
@@ -24,7 +25,6 @@ options.addEventListener("change", function(event) {
             break;
     }
 }); options.dispatchEvent(new Event("change"));
-
 
 const submitForm = document.querySelector("#formulario");
 submitForm.addEventListener("submit", function(event) {
