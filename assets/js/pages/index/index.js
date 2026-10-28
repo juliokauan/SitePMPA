@@ -1,8 +1,15 @@
 const options = document.querySelector("#escolha_averb");
 const divForca = document.querySelector("#div_averb_forca");
 const divPrivada = document.querySelector("#div_averb_privada");
-const tempoforaEscolha = document.querySelector("#tempoforaSim");
+const tempoforaEscolha = document.querySelectorAll("#div_tempofora_escolha input");
+const escolhaSim = document.querySelector("#tempoforaSim");
 const divtempoFora = document.querySelector("#div_tempofora");
+
+tempoforaEscolha.forEach((e)=>{
+    e.addEventListener("click", ()=>{
+        divtempoFora.style.display = escolhaSim.checked ? "block" : "none";
+    });
+}); escolhaSim.dispatchEvent(new Event("click"));
 
 options.addEventListener("change", function(event) {
     const selectedOption = event.target.value;
@@ -35,7 +42,7 @@ submitForm.addEventListener("submit", function(event) {
         requerimento: document.querySelector("#requerimento")?.value || "",
         promocao: document.querySelector("#promocao")?.value || "",
         patente: document.querySelector("input[name='patente']:checked")?.value || "",
-        escolha_averb: document.querySelector("#escolha_averb")?.value || "",
+        escolhaAverb: document.querySelector("#escolha_averb")?.value || "",
         averbForca: {
             ano: document.querySelector("#ano_forcas")?.value || "",
             mes: document.querySelector("#mes_forcas")?.value || "",
@@ -45,6 +52,11 @@ submitForm.addEventListener("submit", function(event) {
             ano: document.querySelector("#ano_privada")?.value || "",
             mes: document.querySelector("#mes_privada")?.value || "",
             dia: document.querySelector("#dias_privada")?.value || ""
+        },
+        tempoFora: {
+            ano: document.querySelector("#ano_tempofora")?.value || "",
+            mes: document.querySelector("#mes_tempofora")?.value || "",
+            dia: document.querySelector("#dias_tempofora")?.value || "",
         }
     };
     const respostasJSON = JSON.stringify(respostas);    

@@ -13,7 +13,7 @@ export function criarData(data){
     if (typeof data === "string" && data.trim() !== "")
     {
         const [ano, mes, dia] = data.split("-").map(Number);
-        return new Datas(ano, mes, dia);
+        return new Datas(ano, dia, mes);
     }
     if (typeof data === "object" && data !== null){
         return new Datas(data);
@@ -30,4 +30,5 @@ export function transformarDados(respostas){
     respostas.promocao = criarData(respostas.promocao);
     respostas.averbForca = criarData(respostas.averbForca);
     respostas.averbPrivada = criarData(respostas.averbPrivada);
+    respostas.tempoFora = criarData(respostas.tempoFora);
 }
