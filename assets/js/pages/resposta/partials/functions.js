@@ -13,7 +13,7 @@ export function criarData(data){
     if (typeof data === "string" && data.trim() !== "")
     {
         const [ano, mes, dia] = data.split("-").map(Number);
-        return new Datas(ano, dia, mes);
+        return new Datas(ano, mes, dia);
     }
     if (typeof data === "object" && data !== null){
         return new Datas(data);

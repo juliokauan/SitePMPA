@@ -11,6 +11,15 @@ export default class Datas{
             this.mes = Number(mes);
             this.dia = Number(dia);
         }
+        
+        while (this.dia >= 30){
+            this.mes++;
+            this.dia -= 30;
+        }
+        while (this.mes >= 12){
+            this.ano++;
+            this.mes -= 12;
+        }
     }
 
     somaData(data){

@@ -59,6 +59,7 @@ submitForm.addEventListener("submit", function(event) {
             dia: document.querySelector("#dias_tempofora")?.value || "",
         }
     };
+    console.log(respostas);
     const respostasJSON = JSON.stringify(respostas);    
     localStorage.setItem("Respostas", respostasJSON);
     window.location.href = "resposta.html";
