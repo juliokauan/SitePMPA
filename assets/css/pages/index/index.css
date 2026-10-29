@@ -10,6 +10,10 @@ div label:first-child{
   font-size: 1.1em;
 }
 
+#tempoforaSim:checked ~ #div_tempofora{
+  display: block;
+}
+
 .style_label{
   display: block;
   margin-bottom: 20px;

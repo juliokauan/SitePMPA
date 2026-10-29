@@ -15,16 +15,16 @@ function temIntersticio(inter, metade){
         return inter.ano >= 3;
     }
     else if (metade.ano == 2){
-        return inter.ano >= 2 && inter.mes >= 6 
+        return inter.ano >= 3 || (inter.ano == 2 && inter.mes >= 6); 
     }
 }
 
 function respostasHTML(tempoServ, tempoEfet, intersticio, resultado, pedagio, promocao, tempoFaltando, tempoRestante){
-    document.querySelector("#tempo_de_servico").textContent = `${tempoServ.ano} Anos, ${tempoServ.mes} Mêses e ${tempoServ.dia} dias`;
-    document.querySelector("#tempo_efetivo").textContent = `${tempoEfet.ano} Anos, ${tempoEfet.mes} Mêses e ${tempoEfet.dia} dias`;
-    document.querySelector("#intersticio").textContent = `${intersticio.ano} Anos, ${intersticio.mes} Mêses e ${intersticio.dia} dias`;
+    document.querySelector("#tempo_de_servico").textContent = `${tempoServ.ano} Anos, ${tempoServ.mes} Meses e ${tempoServ.dia} dias`;
+    document.querySelector("#tempo_efetivo").textContent = `${tempoEfet.ano} Anos, ${tempoEfet.mes} Meses e ${tempoEfet.dia} dias`;
+    document.querySelector("#intersticio").textContent = `${intersticio.ano} Anos, ${intersticio.mes} Meses e ${intersticio.dia} dias`;
     if (pedagio){
-        document.querySelector("#pedagio").textContent = `${pedagio.ano} Anos, ${pedagio.mes} Mêses e ${pedagio.dia} dias`;
+        document.querySelector("#pedagio").textContent = `${pedagio.ano} Anos, ${pedagio.mes} Meses e ${pedagio.dia} dias`;
     }
     else{
         document.querySelector("#pedagio").textContent = "----";
@@ -37,7 +37,7 @@ function respostasHTML(tempoServ, tempoEfet, intersticio, resultado, pedagio, pr
         resultadoTexto.innerHTML = `
         ${resultado}<br>
         Data da Promoção: ${promocao.ano}/${promocao.mes < 10 ? "0" + promocao.mes : promocao.mes}/${promocao.dia < 10 ? "0" + promocao.dia : promocao.dia}<br>
-        Tempo Restante: ${tempoRestante.ano} Anos, ${tempoRestante.mes} Mêses e ${tempoRestante.dia} dias`;
+        Tempo Restante: ${tempoRestante.ano} Anos, ${tempoRestante.mes} Meses e ${tempoRestante.dia} dias`;
         resultadoTexto.style.bottom = "30px";
     }
     else if (promocao){
