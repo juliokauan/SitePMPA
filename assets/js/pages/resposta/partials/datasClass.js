@@ -12,13 +12,14 @@ export default class Datas{
             this.dia = Number(dia);
         }
         
+        while (this.dia >= 365){
+            this.ano++;
+            this.dia -= 365;
+        }
+
         while (this.dia >= 30){
             this.mes++;
             this.dia -= 30;
-        }
-        while (this.mes >= 12){
-            this.ano++;
-            this.mes -= 12;
         }
     }
 

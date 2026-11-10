@@ -103,13 +103,3 @@ else if (passouLimite){
 else{
     respostasHTML(tempodeServico, tempoEfetivo, intersticio, "O Militar está apto a ser promovido na data de sua promoção.", Pedagio, dataPromocao);
 }
-
-
-
-
-
-
-
-
-
-
